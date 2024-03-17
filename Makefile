@@ -87,57 +87,11 @@ Ortho4XP:
 		&& bash -c 'for lat in {-9..9}; do for lon in {-18..18}; do ln -snfr ./ "./$$(printf "%+d0%+03d0" "$$lat" "$$lon")"; done; done'
 	mkdir -p var/cache/ferranti_nonStandardNames/ \
 		&& cd var/cache/ferranti_nonStandardNames/ \
-		&& wget --continue --no-verbose \
-			http://viewfinderpanoramas.org/dem1/U19.zip \
-			http://viewfinderpanoramas.org/dem1/U20.zip \
-			http://viewfinderpanoramas.org/dem1/U21.zip \
-			http://viewfinderpanoramas.org/dem1/U22.zip \
-			http://viewfinderpanoramas.org/dem1/U23.zip \
-			http://viewfinderpanoramas.org/dem1/U24.zip \
-			http://viewfinderpanoramas.org/dem1/U25.zip \
-			http://viewfinderpanoramas.org/dem1/U26.zip \
-			http://viewfinderpanoramas.org/dem1/U27.zip \
-			http://viewfinderpanoramas.org/dem1/U28.zip \
-			http://viewfinderpanoramas.org/dem1/U29.zip \
-			http://viewfinderpanoramas.org/dem1/T18.zip \
-			http://viewfinderpanoramas.org/dem1/T19.zip \
-			http://viewfinderpanoramas.org/dem1/T20.zip \
-			http://viewfinderpanoramas.org/dem1/T21.zip \
-			http://viewfinderpanoramas.org/dem1/T22.zip \
-			http://viewfinderpanoramas.org/dem1/T23.zip \
-			http://viewfinderpanoramas.org/dem1/T24.zip \
-			http://viewfinderpanoramas.org/dem1/T25.zip \
-			http://viewfinderpanoramas.org/dem1/T26.zip \
-			http://viewfinderpanoramas.org/dem1/T27.zip \
-			http://viewfinderpanoramas.org/dem1/T28.zip \
-			http://viewfinderpanoramas.org/dem1/S19.zip \
-			http://viewfinderpanoramas.org/dem1/S20.zip \
-			http://viewfinderpanoramas.org/dem1/S21.zip \
-			http://viewfinderpanoramas.org/dem1/S22.zip \
-			http://viewfinderpanoramas.org/dem1/S23.zip \
-			http://viewfinderpanoramas.org/dem1/S24.zip \
-			http://viewfinderpanoramas.org/dem1/S25.zip \
-			http://viewfinderpanoramas.org/dem1/S26.zip \
-			http://viewfinderpanoramas.org/dem1/S27.zip \
-			http://viewfinderpanoramas.org/dem1/S28.zip \
-			http://viewfinderpanoramas.org/dem1/R21.zip \
-			http://viewfinderpanoramas.org/dem1/R22.zip \
-			http://viewfinderpanoramas.org/dem1/R23.zip \
-			http://viewfinderpanoramas.org/dem1/R24.zip \
-			http://viewfinderpanoramas.org/dem1/R25.zip \
-			http://viewfinderpanoramas.org/dem1/R26.zip \
-			http://viewfinderpanoramas.org/dem1/R27.zip \
-			http://viewfinderpanoramas.org/dem1/Q22.zip \
-			http://viewfinderpanoramas.org/dem1/R23.zip \
-			http://viewfinderpanoramas.org/dem1/R24.zip \
-			http://viewfinderpanoramas.org/dem1/R25.zip \
-			http://viewfinderpanoramas.org/dem1/P22.zip \
-			http://viewfinderpanoramas.org/dem1/P23.zip \
-			http://viewfinderpanoramas.org/dem1/R24.zip \
-			http://viewfinderpanoramas.org/dem1/O23.zip \
-		&& unzip -jo -d ../../../Ortho4XP/Elevation_data -o '*.zip' \
-		&& cd ../../../Ortho4XP/Elevation_data \
-		&& find -type f -exec sh -c 'mv {} "$$(tr [:lower:] [:upper:] <<< $$(basename {} .hgt)).hgt"' \;
+		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-North.zip \
+		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-West.zip \
+		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-East.zip \
+		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-South.zip \
+		&& unzip -j -d ../../../Ortho4XP/Elevation_data -o '*.zip'
 
 #
 # Custom tile elevation
