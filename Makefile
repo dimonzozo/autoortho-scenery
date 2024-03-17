@@ -85,13 +85,6 @@ Ortho4XP:
 	@echo "Setting up symlinks in order to not care about Ortho4XP's expected directory structure in ./Elevation_data..."
 	@mkdir -p $@/Elevation_data && cd $@/Elevation_data \
 		&& bash -c 'for lat in {-9..9}; do for lon in {-18..18}; do ln -snfr ./ "./$$(printf "%+d0%+03d0" "$$lat" "$$lon")"; done; done'
-	mkdir -p var/cache/ferranti_nonStandardNames/ \
-		&& cd var/cache/ferranti_nonStandardNames/ \
-		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-North.zip \
-		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-West.zip \
-		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-East.zip \
-		&& wget --continue http://viewfinderpanoramas.org/dem3/GL-South.zip \
-		&& unzip -j -d ../../../Ortho4XP/Elevation_data -o '*.zip'
 
 #
 # Custom tile elevation
