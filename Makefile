@@ -16,7 +16,7 @@ MAKEFLAGS += --no-builtin-variables
 
 # @todo: make release in kubilus/autoortho-scenery, see ./bin/prepareAssetsElevationData
 ELEV_RELEASE_JSON_ENDPOINT?=repos/jonaseberle/autoortho-scenery/releases/tags/elevation-v0.0.1
-SPLITSIZE?=125
+SPLITSIZE?=100
 SHELL=/bin/bash
 ZL?=16
 
